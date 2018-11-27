@@ -165,6 +165,9 @@ def _sparefields(cf: List[str], sys: str, raw: str) -> List[str]:
         cf = cf[:-1]
     elif sys == 'C' and len(cf) == numval - 1:
         cf.insert(20, 'spare')
+    elif sys == 'C' and len(cf) == numval - 2:
+        cf.insert(20, 'spare')
+        cf.insert(22, 'spare')
     elif sys == 'E':
         if numval == 29:  # only one trailing spare fields
             cf = cf[:-2]
